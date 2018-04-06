@@ -1,1 +1,6 @@
 <h1><%= @student.to_s %></h1>
+<% status = @student.active ? "active" : "inactive" %>
+
+The student is currently <%= link_to status, activate_student_path(@student) %>
+
+<p><%= link_to 'All Students', students_path %></p>
