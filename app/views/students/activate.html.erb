@@ -1,0 +1,11 @@
+<h1><%= @student.to_s %></h1>
+<form action="/students/<%= @student.id %>" method="patch">
+  <!-- <input type="hidden" name="_method" value="patch"> -->
+  <!-- <%= radio_button_tag(:active, true) %>
+  <%= label_tag(:active_true, "True") %>
+  <%= radio_button_tag(:active, false) %>
+  <%= label_tag(:active_false, "False") %> -->
+  <input type="radio" name="activate" value="true" <%= 'checked' if @student.active %>>Active</input>
+  <input type="radio" name="activate" value="false" <%= 'checked' if !@student.active %>>Inactive</input>
+  <input type="submit" name="submit" id="submit">
+</form>
